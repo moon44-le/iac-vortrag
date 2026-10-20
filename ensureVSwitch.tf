@@ -9,7 +9,7 @@ terraform {
 
 provider "hyperv" {
   host     = "127.0.0.1"
-  port     = 5986
+  port     = 5985
   https    = false
   insecure = true # Nur für Testumgebungen empfohlen
   user     = "Administrator"
