@@ -17,8 +17,8 @@ provider "hyperv" {
 }
 
 # Deklaration des virtuellen Switches
-resource "hyperv_network_switch" "external" {
-  name                = "vSwitch-External"
+resource "hyperv_network_switch" "private" {
+  name                = "vSwitch-Private"
   switch_type         = "Private"
   net_adapter_names   = ["Ethernet"]
   allow_management_os = true
