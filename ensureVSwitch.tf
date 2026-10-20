@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "hyperv" {
-  host     = "locahost"
+  host     = "localhost"
   port     = 5986
   https    = false
   insecure = true # Nur für Testumgebungen empfohlen
