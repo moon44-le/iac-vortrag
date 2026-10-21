@@ -8,11 +8,13 @@ terraform {
 }
 
 provider "hyperv" {
-  uri      = "https://127.0.0.1:5986/wsman"
+hostname = "127.0.0.1"
+  port     = 5986
+  tls      = true
+  insecure = true
+  auth     = "basic" # oder "negotiate"
   user     = "Administrator"
-  password = "deineMudda123" # Dein aktuelles Administrator-Passwort einsetzen
-  https    = true
-  insecure = true # Erlaubt das selbstsignierte Zertifikat
+  password = "deineMudda123"
 }
 
 resource "hyperv_network_switch" "private" {
