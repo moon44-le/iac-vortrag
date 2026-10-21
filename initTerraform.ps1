@@ -1,5 +1,5 @@
 # 1. In den lokalen Projektordner wechseln
-Set-Location "C:\iac-vortrag-1"
+Set-Location "C:\Users\Administrator\vortrag"
 
 # 2. Terraform Workflow ausführen
 Write-Host "1. Initialisiere Terraform..." -ForegroundColor Cyan
