@@ -2,7 +2,7 @@ terraform {
   required_providers {
     hyperv = {
       source  = "taliesins/hyperv"
-      version = "~> 2.2.0"
+      version = "~> 1.2"
     }
   }
 }
