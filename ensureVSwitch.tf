@@ -8,12 +8,16 @@ terraform {
 }
 
 provider "hyperv" {
-  host     = "172.28.31.79"
-  port     = 5985
-  https    = false
-  insecure = true # Nur für Testumgebungen empfohlen
-  user     = "Administrator"
-  password = "deineMudda123"
+  # Nutzt den lokalen Backend-Modus, wenn Terraform direkt 
+  # auf dem Hyper-V-Host oder in der VM ausgeführt wird
+  backend = "local"
+
+#  host     = "172.28.31.79"
+#  port     = 5985
+#  https    = false
+#  insecure = true # Nur für Testumgebungen empfohlen
+#  user     = "Administrator"
+#  password = "deineMudda123"
 }
 
 # Deklaration des virtuellen Switches
