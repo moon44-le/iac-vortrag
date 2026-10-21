@@ -2,29 +2,23 @@ terraform {
   required_providers {
     hyperv = {
       source  = "taliesins/hyperv"
-      version = "~> 1.2"
+      version = "~> 2.2.0"
     }
   }
 }
 
 provider "hyperv" {
-  # Nutzt den lokalen Backend-Modus, wenn Terraform direkt 
-  # auf dem Hyper-V-Host oder in der VM ausgeführt wird
-  backend = "local"
-
-#  host     = "172.28.31.79"
-#  port     = 5985
-#  https    = false
-#  insecure = true # Nur für Testumgebungen empfohlen
-#  user     = "Administrator"
-#  password = "deineMudda123"
+  # Zwingt den Provider auf den lokalen Rechner
+  hostname   = "localhost"
+  port       = 5985
+  tls        = false
+  # Nutzt Standard-Authentifizierung für den lokalen Test
+  auth       = "negotiate" # oder "basic" falls negotiate hakt
+  transport  = "http"
 }
 
-# Deklaration des virtuellen Switches
 resource "hyperv_network_switch" "private" {
-  name                = "vSwitch-Private"
-  switch_type         = "Private"
-  net_adapter_names   = ["Ethernet"]
+  name                = "Terraform-Demo-Bridge"
+  switch_type         = "Internal"
   allow_management_os = true
-  notes               = "Erstellt via Terraform"
 }
