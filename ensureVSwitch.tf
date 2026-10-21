@@ -2,19 +2,15 @@ terraform {
   required_providers {
     hyperv = {
       source  = "taliesins/hyperv"
-      version = "~> 1.2"
+      version = "~> 2.2.0" # oder deine aktuell verwendete Version
     }
   }
 }
 
 provider "hyperv" {
-  # Zwingt den Provider auf den lokalen Rechner
-  hostname   = "localhost"
-  port       = 5985
-  tls        = false
-  # Nutzt Standard-Authentifizierung für den lokalen Test
-  auth       = "negotiate" # oder "basic" falls negotiate hakt
-  transport  = "http"
+  # Für lokale Ausführung auf dem Hyper-V Server werden 
+  # keine Remote-Argumente benötigt. Der Provider greift 
+  # direkt auf die lokale WMI/Hyper-V-Schnittstelle zu.
 }
 
 resource "hyperv_network_switch" "private" {
