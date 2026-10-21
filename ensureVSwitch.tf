@@ -8,7 +8,11 @@ terraform {
 }
 
 provider "hyperv" {
-  # Lokaler Modus benötigt keine Remote-Parameter
+  uri      = "https://127.0.0.1:5986/wsman"
+  user     = "Administrator"
+  password = "deineMudda123" # Dein aktuelles Administrator-Passwort einsetzen
+  https    = true
+  insecure = true # Erlaubt das selbstsignierte Zertifikat
 }
 
 resource "hyperv_network_switch" "private" {
