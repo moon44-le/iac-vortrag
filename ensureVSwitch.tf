@@ -2,15 +2,13 @@ terraform {
   required_providers {
     hyperv = {
       source  = "taliesins/hyperv"
-      version = "~> 2.2.0" # oder deine aktuell verwendete Version
+      version = "~> 1.2.1"
     }
   }
 }
 
 provider "hyperv" {
-  # Für lokale Ausführung auf dem Hyper-V Server werden 
-  # keine Remote-Argumente benötigt. Der Provider greift 
-  # direkt auf die lokale WMI/Hyper-V-Schnittstelle zu.
+  # Lokaler Modus benötigt keine Remote-Parameter
 }
 
 resource "hyperv_network_switch" "private" {
