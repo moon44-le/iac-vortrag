@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "hyperv" {
-hostname = "127.0.0.1"
+  hostname = "127.0.0.1"
   port     = 5986
   tls      = true
   insecure = true
