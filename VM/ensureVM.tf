@@ -32,9 +32,6 @@ variable "vm_ordner" {
   default = "C:\\VMs"
 }
  
-# variable "vorlage" {
-#  default = "C:\\Vorlagen\\vorlage.vhdx"
-#}
  
 resource "hyperv_vhd" "disk" {
 count     = 3
@@ -51,10 +48,6 @@ resource "hyperv_machine_instance" "server" {
   static_memory        = true
   memory_startup_bytes = 2147483648
  
-#  network_adaptors {
-#    name        = "netzwerk"
-#    switch_name = var.switch_name
-#  }
  
   hard_disk_drives {
     controller_type     = "Scsi"
