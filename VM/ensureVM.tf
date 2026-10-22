@@ -37,10 +37,10 @@ variable "vm_ordner" {
 #}
  
 resource "hyperv_vhd" "disk" {
-  count     = 3
+count     = 3
   path      = "${var.vm_ordner}\\server-${count.index + 1}.vhdx"
-  size_bytes = 68719476736 # Entspricht 60 GB (60 * 1024 * 1024 * 1024)
-  
+  size      = 68719476736 # 60 GB in Bytes
+  vhd_type  = "Dynamic"
 }
  
 resource "hyperv_machine_instance" "server" {
