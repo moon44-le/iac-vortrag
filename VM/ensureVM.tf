@@ -46,7 +46,7 @@ resource "hyperv_machine_instance" "server" {
   generation           = 2
   processor_count      = 2
   static_memory        = true
-  memory_startup_bytes = 2147483648
+  memory_startup_bytes = 1073741824
  
  
   hard_disk_drives {

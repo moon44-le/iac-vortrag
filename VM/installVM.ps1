@@ -21,8 +21,8 @@ for ($i = 1; $i -le 3; $i++) {
     # 3. Prozessoren konfigurieren (2 vCPUs)
     Set-VM -Name $vmName -ProcessorCount 2 | Out-Null
     
-    # 4. Arbeitsspeicher konfigurieren (Statisch: 2 GB = 2147483648 Bytes)
-    Set-VMMemory -VMName $vmName -StartupBytes 2147483648 -DynamicMemoryEnabled $false | Out-Null
+    # 4. Arbeitsspeicher konfigurieren (Statisch: 2 GB = 1073741824 Bytes)
+    Set-VMMemory -VMName $vmName -StartupBytes 1073741824 -DynamicMemoryEnabled $false | Out-Null
     
     # 5. Festplatte an SCSI-Controller (Controller 0, Location 0) anbinden
     Add-VMHardDiskDrive -VMName $vmName -ControllerType SCSI -ControllerNumber 0 -ControllerLocation 0 -Path $vhdPath | Out-Null
