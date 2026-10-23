@@ -24,10 +24,6 @@ variable "hyperv_password" {
   sensitive = true
 }
  
-variable "switch_name" {
-  default = "MeinSwitch"
-}
- 
 variable "vm_ordner" {
   default = "C:\\VMs"
 }
